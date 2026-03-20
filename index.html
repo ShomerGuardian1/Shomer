@@ -253,22 +253,46 @@ Restoring dignity.
       <h2 class="text-4xl heading-font font-bold mb-6" data-i18n="vol_title">Get Involved</h2>
       <p class="text-xl text-slate-600 mb-12" data-i18n="vol_p">Support the stewardship of this important heritage site. Students, professionals and community members are warmly invited to participate.</p>
 
-      <form id="volunteer-form" class="space-y-6 text-left" onsubmit="handleVolunteerSubmit(event)">
-        <div class="grid md:grid-cols-2 gap-6">
-          <input type="text" id="name" data-i18n-ph="form_name" placeholder="Full name" class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500" required>
-          <input type="email" id="email" data-i18n-ph="form_email" placeholder="Email address" class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500" required>
-        </div>
-        <select id="role" class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500">
-          <option value="" data-i18n="form_role_placeholder">Area of interest…</option>
-          <option value="board" data-i18n="role_board_interest">Board Governance / Executive Leadership</option>
-          <option value="advisory" data-i18n="role_advisory_interest">Advisory Council</option>
-          <option value="research" data-i18n="role_research_interest">Research & Documentation</option>
-          <option value="restoration" data-i18n="role_restoration_interest">Restoration & Site Stewardship</option>
-          <option value="communications" data-i18n="role_communications_interest">Communications & Public Outreach</option>
-        </select>
-        <textarea id="message" rows="4" data-i18n-ph="form_message" placeholder="Tell us how you’d like to help…" class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500"></textarea>
-        <button type="submit" data-i18n="form_submit" class="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-2xl text-lg transition-all">Submit Expression of Interest</button>
-      </form>
+     <form id="volunteer-form" class="space-y-6 text-left" 
+      action="https://api.web3forms.com/submit" 
+      method="POST">
+
+  <!-- === WEB3FORMS REQUIRED FIELDS (do not delete or change) === -->
+  <input type="hidden" name="access_key" value="92009d41-991e-4676-bab0-35b5f93b13b8">
+  <input type="hidden" name="subject" value="New Volunteer Expression of Interest from shomer.me!">
+  <input type="hidden" name="redirect" value="https://shomer.me/thank-you.html">
+  
+  <!-- Invisible spam blocker (highly recommended) -->
+  <input type="checkbox" name="botcheck" style="display:none;">
+
+  <!-- === YOUR ORIGINAL FIELDS (unchanged styling + i18n, just added name= attributes) === -->
+  <div class="grid md:grid-cols-2 gap-6">
+    <input type="text" id="name" name="name" data-i18n-ph="form_name" placeholder="Full name" 
+           class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500" required>
+    
+    <input type="email" id="email" name="email" data-i18n-ph="form_email" placeholder="Email address" 
+           class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500" required>
+  </div>
+
+  <select id="role" name="role" 
+          class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500">
+    <option value="" data-i18n="form_role_placeholder">Area of interest…</option>
+    <option value="board" data-i18n="role_board_interest">Board Governance / Executive Leadership</option>
+    <option value="advisory" data-i18n="role_advisory_interest">Advisory Council</option>
+    <option value="research" data-i18n="role_research_interest">Research & Documentation</option>
+    <option value="restoration" data-i18n="role_restoration_interest">Restoration & Site Stewardship</option>
+    <option value="communications" data-i18n="role_communications_interest">Communications & Public Outreach</option>
+  </select>
+
+  <textarea id="message" name="message" rows="4" data-i18n-ph="form_message" 
+            placeholder="Tell us how you’d like to help…" 
+            class="w-full px-5 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-indigo-500"></textarea>
+
+  <button type="submit" data-i18n="form_submit" 
+          class="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-2xl text-lg transition-all">
+    Submit Expression of Interest
+  </button>
+</form>
     </div>
   </section>
 
